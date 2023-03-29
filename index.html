@@ -1,0 +1,177 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PetHub</title>
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Bootstrap Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/717b719988.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="topbar">
+      <img class="logo-img" src="Images/meta.png" alt="p" />
+      <h1 class="logo">Pet-Hub</h1>
+      <span class="job">Get a job</span>
+      <span class="find">Find a walker</span>
+      <h1 class="home">Home</h1>
+      <span class="help">Help</span>
+      <button class="login">Sign in</button>
+      <button class="reg">Sign up</button>
+  </div>
+
+  <!-- Banner -->
+
+  <div class="banner-section">
+    <img src="Images/white-bg-pet.jpg" alt="">
+  </div>
+
+  <div class="about-section">
+    <h2>About Us</h2>
+    <p>We’re passionate about pets and PetHub evolved to make things <br>simple – for pet service providers such as dog walkers, Pet trainers <br>and also for busy people to take care of their pet!
+  </div>
+
+  <section class="testimonials">
+
+    <div id="carousel-set" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <h2 class="testimonial">PetHub has been my lifesaver.<br>With this now I can focus more on my business.</h2>
+          <img src="Images/user-1.png" class="client" alt="UserProfile1">
+        </div>
+        <div class="carousel-item" data-bs-interval="3500">
+          <h2 class="testimonial">I hesitated to leave my cat in some strangers' care.<br>But PetHub offers good service and takes good care of my cat.</h2>
+          <img src="Images/user-3.png" class="client" alt="UserProfile2">
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <h2 class="testimonial">I was so busy with my work.<br>But then with PetHub I can be rest assured.</h2>
+          <img src="Images/lady-img.jpg" class="client" alt="UserProfile3">
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-set" data-bs-slide="prev" >
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel-set" data-bs-slide="next" >
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+  <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Us</h1>
+            <p>
+              <i class="fa-solid fa-envelopes-bulk"></i>avinashrj2003@gmail.com
+            </p>
+            <p class="mob"><i class="fa-solid fa-phone-volume"></i>9597001732</p>
+            <div class="social-icons">
+              <a href="https://linkedin.com/in/avinash-rj"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/avinash__r_j/"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://twitter.com/Avinash_R_J?s=09"><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://t.me/avinash_r_j"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+
+            <!--------------for downloding a file -->
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="text"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <div class="container">
+          <i class="fa-brands fa-twitter brand-icon"></i>
+          <i class="fa-brands fa-facebook-f brand-icon"></i>
+          <i class="fa-brands fa-instagram brand-icon"></i>
+          <i class="fa-solid fa-envelope brand-icon"></i>
+        </div>
+        <p>
+          Copyright @ PetHub
+          <i class="fa-solid fa-heart heart"></i>
+        </p>
+      </div>
+    </div>
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-links");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-links");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+    <!--side bar transition in mobile view-->
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "100px";
+      }
+    </script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyL0jrLBfGpn9u7qCVngWqf8SZtzkDf08uJue5WShqpLcqbjxTKStTOZDZzBRajxHRN/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message Sent Successfully";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
+
+</body>
+
+</html>

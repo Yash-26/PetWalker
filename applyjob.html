@@ -1,0 +1,127 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PetHub</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="contactStyles.css">
+
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/717b719988.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="topbar">
+      <img class="logo-img" src="Images/meta.png" alt="p" />
+      <h1 class="logo">Pet-Hub</h1>
+      <span class="job">Get a job</span>
+      <span class="find">Find a walker</span>
+      <h1 class="home">Home</h1>
+      <span class="help">Help</span>
+      <button class="login">Sign in</button>
+      <button class="reg">Sign up</button>
+  </div>
+
+
+    <div id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="contact-left">
+              <h1 class="sub-title">Job Application</h1>
+              <p>
+                <i class="fa-solid fa-envelopes-bulk"></i>avinashrj2003@gmail.com
+              </p>
+              <p class="mob"><i class="fa-solid fa-phone-volume"></i>9597001732</p>
+              <div class="social-icons">
+                <a href="https://linkedin.com/in/avinash-rj"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/avinash__r_j/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/Avinash_R_J?s=09"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://t.me/avinash_r_j"><i class="fa-brands fa-telegram"></i></a>
+              </div>
+
+              <!--------------for downloding a file -->
+            </div>
+            <div class="contact-right">
+              <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required />
+                <input
+                  type="text"
+                  name="Email"
+                  placeholder="Your Email"
+                  required
+                />
+                <textarea
+                  name="Message"
+                  rows="6"
+                  placeholder="Description"
+                ></textarea>
+                <button type="submit" class="btn btn2">Apply</button>
+              </form>
+              <span id="msg"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <div class="container-brand">
+            <i class="fa-brands fa-twitter brand-icon"></i>
+            <i class="fa-brands fa-facebook-f brand-icon"></i>
+            <i class="fa-brands fa-instagram brand-icon"></i>
+            <i class="fa-solid fa-envelope brand-icon"></i>
+          </div>
+          <p>
+            Copyright @ PetHub
+            <i class="fa-solid fa-heart heart"></i>
+          </p>
+        </div>
+      </div>
+      <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+          for (tablink of tablinks) {
+            tablink.classList.remove("active-links");
+          }
+          for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+          }
+          event.currentTarget.classList.add("active-links");
+          document.getElementById(tabname).classList.add("active-tab");
+        }
+      </script>
+      <!--side bar transition in mobile view-->
+      <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+          sidemenu.style.right = "0";
+        }
+        function closemenu() {
+          sidemenu.style.right = "100px";
+        }
+      </script>
+      <script>
+        const scriptURL =
+          "https://script.google.com/macros/s/AKfycbyL0jrLBfGpn9u7qCVngWqf8SZtzkDf08uJue5WShqpLcqbjxTKStTOZDZzBRajxHRN/exec";
+        const form = document.forms["submit-to-google-sheet"];
+        const msg = document.getElementById("msg");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          fetch(scriptURL, { method: "POST", body: new FormData(form) })
+            .then((response) => {
+              msg.innerHTML = "Message Sent Successfully";
+              setTimeout(function () {
+                msg.innerHTML = "";
+              }, 5000);
+              form.reset();
+            })
+            .catch((error) => console.error("Error!", error.message));
+        });
+      </script>
+
+</body>
+</html>
